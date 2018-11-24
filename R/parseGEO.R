@@ -580,7 +580,7 @@ parseGSEMatrix <- function(fname,AnnotGPL=FALSE,destdir=tempdir(),getGPL=TRUE,pa
     ## genotypes in AA AB BB form, so need to switch it up....
     ##  colClasses <- c('character',rep('numeric',nrow(sampledat)))
     datamat <- read_tsv(fname,quote='"',
-                        na=c('NA','null','NULL','Null'), skip = series_table_begin_line,
+                        na=c('NA','null','NULL','Null'), skip = series_table_begin_line - 1,
                         comment = '!series_matrix_table_end')
     tmprownames = datamat[[1]]
                                         # need the as.matrix for single-sample or empty GSE
